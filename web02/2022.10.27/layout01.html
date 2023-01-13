@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <style>
+        /* 1920px 지정할 필요는 없음, 전체 너비 */
+        header{ border-bottom: 1px solid black; 
+            margin-bottom: 10px;
+        }
+        .header-container{ width:1120px; margin:auto;}
+        h1{ float:left; font-size:0; }
+        .gnb{ float:right; font-size:12px;}
+        .lnb{ width:580px; margin: auto;}
+
+        .gnb li,
+        .lnb li{ float:left; }
+
+        .lnb li{ margin-right:55px; padding: 23px 0;}
+        .lnb li:last-child{ margin-right:0; }
+        .lnb a{ display: block; padding: 2px;}
+
+        .gnb a{ display: block; padding: 10px;}
+        .gnb li{   padding: 15px 0;}
+        .gnb li:last-child{  font-size:0; }
+        .gnb li:last-child img{ height:12px;  }
+
+    </style>
+    <style>
+        .section-container{ width:1430px; margin:auto; 
+                background-color: pink;
+        }
+        article:nth-child(1){  width: 846px; height: 627px; 
+            background-color: hotpink;
+            margin-right:12px; 
+            margin-bottom:12px; 
+        }
+
+        article{ width:280px; height:308px;
+            background-color:green;
+            float:left; padding: 20px;
+        }
+        article:nth-child(2){ background-color: antiquewhite;
+            margin-right:12px;  
+            margin-bottom:11px;  
+        }
+        article:nth-child(3){ background-color: aquamarine; 
+            margin-bottom:11px;
+        }
+        article:nth-child(4){ background-color: aqua;
+            margin-right:10px; 
+            margin-bottom:12px;
+        }
+        article:nth-child(5){ background-color: lightcoral;
+            margin-bottom:12px;
+        }
+        /* article:nth-child(6){ clear:left; } */
+        article:nth-child(6){ width:351px; height:680px; 
+                background-color: blueviolet;
+                margin-right:12px; 
+        }
+        article:nth-child(7){ width:701px; height:334px; 
+                background-color: lightgray;
+                margin-right:12px;
+                margin-bottom:12px;
+        }
+        article:nth-child(8){ width:351px; height:334px; 
+                background-color: rgb(151, 115, 115);
+                margin-bottom:12px;
+        }
+        article:nth-child(9){ width:351px; height:334px; 
+                background-color: rgb(117, 33, 33);
+                margin-right:12px;
+               
+        }
+        article:nth-child(10){ width:701px; height:334px; 
+                background-color: rgb(249, 41, 41);
+        }
+
+        /* design  */
+        article h2{ text-transform: uppercase;
+            font-size: 12px; color:#fff;
+        }
+        article h2>span{ text-decoration: underline;}
+
+        article:nth-child(1){ 
+            background-image: url(./images/img_banner1_3.jpg);
+            background-size: cover;
+            background-position: center center;
+        }
+        article:nth-child(1) h2{ font-size: 44px; font-weight: 400;
+            padding:1em; color:#fff;
+        }
+        article:nth-child(1) span{ display: block; text-decoration: none;}
+
+        article:nth-child(6) h2,
+        article:nth-child(10) h2{ 
+            font-size: 44px;
+            font-weight: normal;
+        }
+        article:nth-child(6) h2>span,
+        article:nth-child(10) h2>span{ 
+            text-decoration: none; display: block;
+            text-transform: capitalize;
+        }
+         /* capitalize : 단어의 첫글자만 대문자 
+                 css : 태그내의 문장의 첫글자 
+                 h2에 적용하면 이유 h2를 span 상속
+            */
+
+        article:nth-child(2){ background-color: #fff;
+            border:1px solid black; 
+        }
+        article:nth-child(2) h2{  color:#000;
+            margin-bottom: 100px;
+        }
+        
+        article:nth-child(2) time{  font-size: 12px; 
+            margin-bottom: 50px;
+            display: block;
+        }
+        .indecator li{ float:left; }
+        .indecator a{ display: block; width:10px; height: 10px;
+            border-radius: 10px;
+            background-color: gray;
+            margin: 2px;
+        }
+
+        
+        article:nth-child(3){ 
+            background-image:url(./images/icon_film.png), 
+                                url(./images/img_prfilm.jpg);
+            background-position:210px 230px, center center;
+            background-repeat: no-repeat;
+        }
+        article:nth-child(3) h2{ margin-bottom: 200px;}
+        article:nth-child(3) img{ float:right; }
+
+        article:nth-child(4){ 
+            background-image:url(./images/img_product_view_500x500_024.png);
+            background-position:  center center; 
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-color: #e6cfb0;
+        }
+        article:nth-child(4) h2{ margin-bottom: 200px;} 
+
+
+        article:nth-child(6) { color:#fff; 
+            background-image: url(./images/bg_apple.jpg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-color: #bd87b9;
+        } 
+
+        article:nth-child(7){ color:#fff;
+            background-image: url(./images/img_maxim_flant_banner.jpg);
+            background-position: bottom right;
+            background-size: cover;
+        } 
+        article:nth-child(7) h2{ font-size: 0;} 
+        article:nth-child(7) p:nth-of-type(1){ 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            font-weight: 100;
+            letter-spacing: -0.03em;
+        } 
+        article:nth-child(7) p:nth-of-type(2){ 
+            font-size: 24px;
+        }
+        article:nth-child(7) p:nth-of-type(3){ 
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 1.5em;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container  clearFix">
+            <h1>동서식품 <img src="./images/logo.png" alt=""></h1>
+        
+            <div class="gnb">
+                <!-- global navigation button -->
+                <ul>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">검색
+                        <img src="./images/ico_search.gif" alt="">
+                    </a></li>
+                </ul>
+            </div>
+
+            <nav class="lnb clearFix">
+                <!-- local navigation button -->
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">제품안내</a></li>
+                    <li><a href="#">홍보센터</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                    <li><a href="#">고객의소리</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="section-container">
+        <article>
+            <h2><span>세상의 모든 </span>  순간이 더 <br>행복해지도록</h2>
+        </article>
+        <article>
+            <h2><span>hot</span> news</h2>
+            <p>동서식품, 경남 창원공장에 스마트 팩토리 가동</p>
+            <time>2022.07.25</time>
+
+            <ul class="indecator">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </article>
+        <article>
+            <h2><span>pr</span> film</h2>
+
+            <img src="./images/icon_film.png" alt="">
+        </article>
+        <article>
+            <h2><span>new</span> product</h2>
+            <ul class="indecator">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </article>
+        <article>
+            <h2><span>사회</span>공헌</h2>
+            <!--  과제  -->
+        </article>
+        <article>
+            <h2><span>Dongsu</span> <span>History</span></h2>
+            <p>식품문화를 꽃피워온 <br>동서식품의 지난 발자취</p>
+        </article>
+        <article>
+            <p>Better Beans Better Coffee Better Culture</p>
+            <p>도심 속 정원, 숲속 커피 공장</p>
+            <h2><span>맥심 plant</span>
+                <img src="./images/img_maxim.png" alt="">
+            </h2>
+            <p>PLANT</p>
+        </article>
+        <article>
+            <h2><span>TV</span> CF</h2>
+        </article>
+        <article>
+            <h2><span>WEB</span>zine</h2>
+        </article>
+        <article>
+            
+            <h2><span>Food</span><span>Safety</span></h2>
+            <p>안전한 식품이야기 <br>식품안전센터</p>
+        </article>
+    </section>
+</body>
+</html> 

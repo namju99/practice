@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        .container{ margin-top: 300px;}
+        section{ height: 100vh; width:1000px; margin: auto;}
+        section:nth-of-type(1){ background-color: green;}
+        section:nth-of-type(2){ background-color: pink;}
+        section:nth-of-type(3){ background-color: blue;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>section1</section>
+        <section>section2</section>
+        <section>section3</section>
+    </div>
+    <div>
+        요소의 top, left / right, bottom 사용하지 않음
+        offset().top 
+        offset().left
+
+        bottom = offset().top + height
+        right = offset().left + width
+
+
+        부모요소로 부터의 top, left 
+        position().top
+        position().left
+    </div>
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+     $(window).on('resize', function(){
+            console.log( window.innerWidth, window.innerHeight );
+            console.log( $(window).width(), $(this).height() );
+            // domRect = element.getBoundingClientRect();
+            console.log('section1 top : ' ,  $('section').eq(0).position().top);
+            console.log('section2 top : ' ,  $('section').eq(1).position().top);
+            console.log('section3 top : ' ,  $('section').eq(2).position().top);
+     })
+    </script>
+</body>
+</html>

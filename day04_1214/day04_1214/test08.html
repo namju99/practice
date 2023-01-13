@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        .lnb ul{ display: flex; width: 1200px; margin: auto;
+            gap: 30px;
+            position: fixed; top: 20px;
+            justify-content: center
+        }
+        .lnb a.active{ color:red; background-color: yellow;}
+        /* html{ scroll-behavior: smooth;} */
+        section{ height: 100vh; width:1000px; margin: auto;}
+        section:nth-of-type(1){ background-color: green;}
+        section:nth-of-type(2){ background-color: pink;}
+        section:nth-of-type(3){ background-color: blue;}
+
+        section h2{ text-align: center; font-size: 100px; color:white;
+            line-height: 100vh;
+        }
+
+        section.active h2{ 
+            animation: ani 1s 10 backwards;
+        }
+
+        @keyframes ani{
+            50%{ opacity: 0;}
+        }
+        html, body{ }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="lnb">
+            <ul>
+                <li><a href="#SECTION1">section1</a></li>
+                <li><a href="#SECTION2">section2</a></li>
+                <li><a href="#SECTION3">section3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="SECTION1"><h2>section1</h2></section>
+        <section id="SECTION2"><h2>section2</h2></section>
+        <section id="SECTION3"><h2>section3</h2></section>
+    </div>
+     
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script src="../script/jquery.mousewheel.js"></script>
+    <script>
+        const duration = 1000; 
+
+        function init(index, sectionTop){
+            $('html, body').stop().animate({'scrollTop' : sectionTop }, duration,  'easeOutElastic');
+            $('section').removeClass('active');
+            $('section').eq(index).addClass('active');
+            $('.lnb a').removeClass('active');
+            $('.lnb li').eq(index).find('a').addClass('active');
+        }
+        
+        init(0, 0);
+
+
+        $('section').mousewheel(function(event){
+            console.log( event.deltaX,  event.deltaY, event.deltaFactor );
+            // event.deltaY :  휠을 아래로 -1, 위로 1
+            let sectionTop ; 
+            let index = $(this).index(); 
+
+            if( event.deltaY > 0){
+                sectionTop = $(this).prev().offset().top; 
+                index--; 
+            }else if( event.deltaY < 0 ){
+                sectionTop = $(this).next().offset().top;
+                index++; 
+            }
+
+            init(index, sectionTop);
+        })
+    </script>
+     
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery-3.6.1.js"></script>
+    
+    <style>
+        *{ margin:0; padding:0;}
+        body{ overflow-x: hidden; width: 100%; height: 100vh;  }
+        
+         
+        .top{   width: 100%; height: 120px; background-color: white; background-image: url(./cgv_image/logoRed.png); background-repeat: no-repeat; 
+        background-size: 120px; background-position: 320px 30px; display:flex; }
+        
+        .culture p{ padding-top:60px; padding-left: 430px; }
+
+        .card img{ padding-top:40px; padding-left: 250px;}
+
+        .login img{ width: 40px; height: 40px; padding-top: 35px; padding-left: 20px;}
+
+        .login a:nth-child(1){ margin-left: 30px;}
+
+        
+
+
+        .gnb{ display:flex; justify-content: center; gap:60px; height: 50px; width:100%; background-color:pink; flex-wrap: wrap;
+       }
+        li{ list-style: none; color: black; width: 50px; padding-top: 10px;}
+
+        li a{ text-decoration: none;}
+
+        .sub-menu{ width: 100px; height: 0px;   background-color: green; transition-duration: 0.5s;
+            z-index: 1;
+         }
+
+         .gnb li:hover .sub-menu{ 
+            height: 200px;
+         }
+
+        .main-section{ 
+            width: 100%; height: 500px; background-color: yellow;
+        }
+
+        .chart{ width: 100%; height: 300px; background-color: gray;}
+
+        
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="culture">
+                <p>C U L T U R E P L E X</p>
+            </div>
+            <div class="card">
+                <a href="#"><img src="./cgv_image/16727156341060.png" alt=""></a>
+            </div>
+            <div class="login">
+                <a href="#"><img src="./cgv_image/loginPassword.png" alt=""></a>
+                
+                
+                <a href="#"><img src="./cgv_image/loginJoin.png" alt=""></a>
+                <a href="#"><img src="./cgv_image/loginMember.png" alt=""></a>
+                <a href="#"><img src="./cgv_image/loginCustomer.png" alt=""></a>
+            </div>
+
+            
+        </div>
+        <nav>
+            <div class="menu">
+                <ul class="gnb">
+                    <li><a href="#">영화</a>
+                         
+                    </li>
+                    
+        
+                    <li><a href="#">극장</a>
+                         
+                    <li><a href="#">예매</a>
+                        
+                    </li>
+                    <li><a href="#">스토어</a>
+                         
+                    </li>
+                    <li><a href="#">이벤트</a>
+                         
+                    </li>
+                    <li><a href="#">혜택</a>
+                         
+                    </li>
+                    
+        
+                </ul>
+                <div class="sub-menu">
+                       
+                           <li><a href="#">무비차트</a></li>
+                           <li><a href="#">아트하우스</a></li>
+                           <li><a href="#">bb</a></li>
+                           <li><a href="#">vv</a></li>
+                           <li><a href="#">cc</a></li>
+                      
+                </div>
+            </div>
+
+            <div class="search"></div>
+        </nav>
+        <div class="main-section"></div>
+
+        <div class="sub-section">
+            <div class="chart">
+                <h1 class="movie-chart">
+                    <a href="#">무비차트</a> <p>|</p> <a href="#">상영예정작</a>
+                </h1>
+            </div>
+            <div class="event"></div>
+            <div class="special"></div>
+            <div class="last"></div>
+            
+        </div>
+        <div class="last-banner"></div>
+        <footer></footer>
+    </div>
+
+    
+    
+
+    <script>
+
+       
+
+            
+
+        
+        
+
+        
+    
+    
+    
+    </script>
+
+     
+     
+</body>
+
+
+</html>

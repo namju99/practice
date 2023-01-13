@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        h1, h2, h3{ font-size: 36px;}
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <h2></h2>
+    <h3><span>text</span></h3>
+
+    <button>클릭</button>
+    <pre>
+        document.querySelector('h1').innerHTML = '<i>Hello</i>' ; // html로 인식
+        document.querySelector('h1').textContent = '<i>Hello</i>' ; // 문자인식
+        const div = document.createElement('div');
+        document.querySelector('h1').append(div);
+    </pre>
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+        // getter, setter  하나로 되어 있다. 
+        // setter
+        $('h1').text('<i><b><u>hello Text</u></b></i>'); 
+        $('h2').html('<i><b><u>hello Text</u></b></i>'); 
+        $('h3').append('<i><b><u>hello Text</u></b></i>'); 
+        $('h3').prepend('<i><b><u>hello Text</u></b></i>'); 
+
+        $('button').on('click', function(){
+            let text = $('h1').text();
+            let html = $('h1').html();
+            console.log( text );
+            console.log( html );
+        })
+    </script>
+</body>
+</html>

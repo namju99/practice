@@ -1,0 +1,43 @@
+
+/* 1920px 지정할 필요는 없음, 전체 너비 */
+header{ border-bottom: 1px solid black; 
+    margin-bottom: 10px;
+}
+.header-container{ width:1120px; margin:auto;}
+.header-container h1{ float:left; font-size:0; }
+.gnb{ float:right; font-size:12px;}
+.lnb{ width:580px; margin: auto;}
+
+.gnb li,
+.lnb li{ float:left; }
+
+.lnb li{ margin-right:55px; padding: 23px 0;}
+.lnb li:last-child{ margin-right:0; }
+.lnb a{ display: block; padding: 2px;}
+
+.gnb a{ display: block; padding: 10px;}
+.gnb li{   padding: 15px 0;}
+.gnb li:last-child{  font-size:0; }
+.gnb li:last-child img{ height:12px;  }
+
+
+/* footer design */
+footer{ height: 300px;  }
+.bar{ border-bottom: 1px solid black;}
+.info-container{ width:1430px; margin: auto;
+    padding: 15px;
+    font-size:12px;
+}
+.info-container>ul{ float:left; }
+.info-container>ul>li{ float:left; margin-right: 20px; }
+
+.info-container>.select-group{ float:right; }
+.info-container>.select-group>select{ margin-left: 40px; }
+
+address{ font-style: normal;
+        width: 1430px; margin: auto;
+        font-size: 12px;
+        padding-top: 15px;
+        line-height: 1.3em;
+}
+address>span{ display: block;}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+         .box{ width:200px; height: 200px; background-color: orange;}
+    </style>
+</head>
+<body>
+    <h1 onclick="window.open()"  >animate</h1>
+    <div>
+        effect method는 애니메이션이  큐메모리에 저장 
+        mouseover, mouseout{ 이벤트 다중 발생 }
+        mouseenter, mouseleave{ 사용 추천 }
+        stop() : 큐에 누적된 애니메이션을 비움
+        <pre>
+            animate({ css속성 : css값 , ........}, speed, ease, callback )
+            애니메이션이 되는 css속성은  값이 숫자인 경우만 가능 
+            margin, padding, width, height, letter-spacing, word-spacing,
+            top, left, right, bottom, opacity, text-indent  
+            ease(가속): 'swing', 'linear' 2개 속성만 있음 
+            callback : 애니메이션 처리후 할일 
+        </pre>
+    </div>
+
+    <button class="play">실행</button>
+    <button class="stop">멈춤</button>
+    <div class="box"></div>
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script>
+        function init(){
+             
+        }
+        init();
+        /*
+        $('.play').on('click', function(){
+            //체이닝 기법
+            $('.box').animate({'margin-left' : '500px' })
+                    .animate({'margin-top' : '500px' })
+                    .animate({'margin-left' : '0' })
+                    .animate({'margin-top' : '0' });
+        })
+        */
+        $('.play').on('click', function(){
+             
+            // callback hell => async, await
+            $('.box').animate({'margin-left' : '500px' }, function(){
+                    $(this).animate({'margin-top' : '500px' }, function(){
+                        $(this).animate({'margin-left' : '0' }, function(){
+                            $(this).animate({'margin-top' : '0' });
+                        })
+                    })
+            })                   
+        })
+    </script>
+    <!-- 
+        jQuery는 dom의 style 속성으로 코드를 삽입하므로
+        javascript 코드를 태그안에 인라인타입으로 삽입하지 않는 습관 갖는다.
+        css() 처리
+     -->
+</body>
+</html>

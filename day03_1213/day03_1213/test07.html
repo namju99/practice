@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/jquery-ui.css">
+    <style>
+        .box{ width:200px; height: 200px; background-color: orange;
+             border: 0px solid red; 
+        }
+        .box.border{ border: 10px solid red; }
+        .box.bgColor{ background-color: blue;}
+        .box.rotate{ transform: rotate( 45deg );}
+
+   </style>
+</head>
+<body>
+    <h1> css 디자인 </h1>
+    <button class="border">테두리</button>
+    <button class="bgColor">배경색</button>
+    <button class="rotate">회전</button>
+    <button class="all">모두 변경</button>
+    <div class="box"></div>
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>     
+         
+        // 다양한 기능을 토글할때 
+        $('.border').on('click',function(){
+            if($('.box').hasClass('border')){
+                $('.box').css({'transition':'none'})
+                .removeClass('border'); 
+            }else{
+                $('.box').css({'transition':'0.4s'})
+                 .addClass('border'); 
+            }
+        })
+        
+        // 하나기능만 토글할때 
+        $('.bgColor').on('click',function(){
+            $('.box').css({'transition':'0.4s'})
+            .toggleClass('bgColor'); 
+        })
+
+        $('.rotate').on('click',function(){
+            $('.box').css({'transition':'0.4s'})
+            .addClass('rotate'); 
+        })
+        
+        $('.all').on('click',function(){
+            $('.box').css({'transition':'none'})
+            .removeClass(['border', 'bgColor', 'rotate']); 
+        })
+
+    </script>
+    <!-- 
+        // 클래스를 전용으로 제어하는 메서드
+        // 클래스명 앞에 .안붙인다. 
+        // getElementsByClassName('클래스')
+        // querySelector('.클래스')
+
+        addClass() 
+        removeClass()
+        hasClass() : 클래스 유무검사 , true, false
+        toggleClass() : 클래스가 있으면 빼고 없으면 넣고 
+     -->
+</body>
+</html>

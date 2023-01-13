@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        h1, h2, h3{ font-size: 36px;}
+    </style>
+</head>
+<body>
+    <h1>목록 추가하기</h1>
+    <ul class="html"></ul> 
+    <ul class="append"></ul> 
+    <ul class="prepend"></ul> 
+
+    <button>html</button>
+    <button>append</button>
+    <button>prepend</button>
+     
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+        const fruits = ['사과', '딸기', '바나나', '오렌지']; 
+
+        $('button').on('click', function(){
+             let btn = $(this).text();
+             console.log( btn );
+
+             if( btn === 'html'){
+                let str = ''; 
+                fruits.forEach((fruit)=>{
+                    str += `<li>${fruit}</li>`
+                })
+                $('.html').html(str);
+             }else if( btn === 'append'){
+                fruits.forEach((fruit)=>{
+                    $('.append').append(`<li>${fruit}</li>`);
+                })
+             }else if( btn === 'prepend'){
+                fruits.forEach((fruit)=>{
+                    $('.prepend').prepend(`<li>${fruit}</li>`);
+                })
+             }
+        })
+    </script>
+</body>
+</html>

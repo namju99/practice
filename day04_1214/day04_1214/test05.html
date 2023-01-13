@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        .lnb ul{ display: flex; width: 1200px; margin: auto;
+            gap: 30px;
+            position: fixed; top: 20px;
+            justify-content: center
+        }
+        .lnb a.active{ color:red; background-color: yellow;}
+        /* html{ scroll-behavior: smooth;} */
+        section{ height: 100vh; width:1000px; margin: auto;}
+        section:nth-of-type(1){ background-color: green;}
+        section:nth-of-type(2){ background-color: pink;}
+        section:nth-of-type(3){ background-color: blue;}
+ 
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="lnb">
+            <ul>
+                <li><a href="#SECTION1">section1</a></li>
+                <li><a href="#SECTION2">section2</a></li>
+                <li><a href="#SECTION3">section3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="SECTION1">section1</section>
+        <section id="SECTION2">section2</section>
+        <section id="SECTION3">section3</section>
+    </div>
+     
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+        $('.lnb a').click(function(){
+            let btn = $(this); // active 주기위해서 클릭된 버튼 백업
+
+            let id = $(this).attr('href'); // #SECTION1, #SECTION2, #SECTION3
+            console.log( $(id).offset().top ) // $(#SECTION1)
+            let top = $(id).offset().top; 
+
+            // 클로저
+            $('html, body').animate({ 'scrollTop' : top }, function(){
+                console.log( '애니 종료' , $(this));
+                $('.lnb a').removeClass('active');
+                btn.addClass('active');
+            });  
+        })
+    </script>
+    <!-- 
+        each
+     -->
+</body>
+</html>

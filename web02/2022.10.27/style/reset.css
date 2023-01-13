@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+*{ 
+    margin:0; padding:0; 
+    box-sizing: border-box;
+ }
+ a,
+ a:active,
+ a:visited { text-decoration: none; color:inherit;  }
+
+ a:hover{ color:red; text-decoration: underline;}
+
+ li{ list-style-type:none; }
+ body{ color:#333; 
+     /* background-color: red; */
+ }
+
+ .clearFix::after{ 
+    content:''; display:block; clear:both;
+}

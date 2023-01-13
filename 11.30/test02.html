@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-container{ }
+        .outer>.inner{} /* 우선순위 10 10 = 20*/
+        .inner{}  /*우선순위 10*/
+        div.inner{} /* 우선순위 tag 1 + class 10 = 11*/
+
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div class="outer">
+            <div class="inner">
+                <div class="center">text</div>
+            </div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>

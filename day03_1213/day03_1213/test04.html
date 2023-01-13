@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/jquery-ui.css">
+    <link rel="stylesheet" href="../styles/jquery-ui.theme.css">
+    <!--  
+        theme 디자인도 있어서 다운로드 하여 직접 사용할 수 있음 
+        images : icon등 배경이미지등이 들어 있음 
+    -->
+    <!-- <style>
+        .accordion-container{ width:1200px; margin: auto;}
+        /* .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+            border: 1px solid #ff4400;
+            background: #b8372b;
+            font-weight: normal;
+            color: #ffffff;
+        } */
+
+        /* 우선순위 id = 100, class = 10, tag = 1
+            프레임워크의 디자인은 대부분 클래스 디자인이므로 
+            아이디를 사용해서 클래스보다 우선순위를 높게 주면 디자인 적용됨 
+        */
+        #acContainer #container h3.active{
+            border: 1px solid #ff4400;
+            background: #b8372b;
+        }
+    </style> -->
+</head>
+<body>
+    <h1></h1>
+    <div class="accordion-container" id="acContainer">
+        
+        <div class="accordion" id="container">
+            <h3 class="active">Section 1</h3>
+            <div>
+              <p>
+              Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+              ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+              amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+              odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+              </p>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+              <p>
+              Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+              purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+              velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+              suscipit faucibus urna.
+              </p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+              <p>
+              Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+              Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+              ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+              lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+              </p>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+              </ul>
+            </div>
+            <h3>Section 4</h3>
+            <div>
+              <p>
+              Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+              et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+              mauris vel est.
+              </p>
+              <p>
+              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos.
+              </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/jquery-3.6.1.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+         $( ".accordion" ).accordion();
+    </script>
+</body>
+</html>
